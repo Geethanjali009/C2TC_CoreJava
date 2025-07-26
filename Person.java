@@ -1,48 +1,40 @@
-package FirstPackage;
+package association;
 
 
-
+	//Container class
 	public class Person {
-		private String personName;
-		private int personAge;
-		private String personCity;
-		
-		public String getPersonName() {
-			return personName;
+
+		private String name;
+		private Address address;
+
+		public Person(String name, Address address) {
+			this.name = name;
+			this.address = address;
 		}
 
-		public void setPersonName(String personName) {
-			this.personName = personName;
+		// Getter and setter methods
+
+		public String getName() {
+			return name;
 		}
 
-		public int getPersonAge() {
-			return personAge;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public void setPersonAge(int personAge) {
-			this.personAge = personAge;
+		public Address getAddress() {
+			return address;
 		}
 
-		public String getPersonCity() {
-			return personCity;
+		public void setAddress(Address address) {
+			this.address = address;
 		}
 
-		public void setPersonCity(String personCity) {
-			this.personCity = personCity;
+		public void displayInfo() {
+			System.out.println("Name: " + name);
+			System.out.println("Address: " + address.getStreet() + ", " + address.getCity() + ", " + address.getState()
+					+ " " + address.getPostalCode());
 		}
-
-		public Person() {
-			System.out.println("Default Constructor");
-		}
-		
-		public Person(String personName, int personAge, String personCity) {
-			System.out.println("Parameterized Constructor");
-			this.personName = personName;
-			this.personAge = personAge;
-			this.personCity = personCity;
-		}
-		
-		
 	}
 
 
