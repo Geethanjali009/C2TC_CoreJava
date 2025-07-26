@@ -1,51 +1,47 @@
-package ScannerDemo;
+package FirstPackage;
+
 
 
 	public class Person {
-		//Data members
-		private String name;
-		private int income;
-		private String gender;
-		private int age;
-		private int tax;
+		private String personName;
+		private int personAge;
+		private String personCity;
 		
-		//Getter and Setters
-		public int getTax() {
-			return tax;
+		public String getPersonName() {
+			return personName;
 		}
-		public void setTax(int tax) {
-			this.tax = tax;
+
+		public void setPersonName(String personName) {
+			this.personName = personName;
 		}
-		public String getName() {
-			return name;
+
+		public int getPersonAge() {
+			return personAge;
 		}
-		public void setName(String name) {
-			this.name = name;
+
+		public void setPersonAge(int personAge) {
+			this.personAge = personAge;
 		}
-		public int getIncome() {
-			return income;
+
+		public String getPersonCity() {
+			return personCity;
 		}
-		public void setIncome(int income) {
-			this.income = income;
+
+		public void setPersonCity(String personCity) {
+			this.personCity = personCity;
 		}
-		public String getGender() {
-			return gender;
-		}
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-		public int getAge() {
-			return age;
-		}
-		public void setAge(int age) {
-			this.age = age;
+
+		public Person() {
+			System.out.println("Default Constructor");
 		}
 		
-		//Object class method to return string representation of Person object
-		@Override
-		public String toString() {
-			return "Person [name=" + name + ", income=" + income + ", gender=" + gender + ", age=" + age + ", tax="+tax+"]";
+		public Person(String personName, int personAge, String personCity) {
+			System.out.println("Parameterized Constructor");
+			this.personName = personName;
+			this.personAge = personAge;
+			this.personCity = personCity;
 		}
+		
 		
 	}
 
