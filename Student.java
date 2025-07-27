@@ -1,45 +1,44 @@
-package hierarchicalinheritance;
+package SingleInheritance;
 
-public class Student extends Person
-{
-	private String clas;
-	private float per;
+public class Student extends Citizen {
+	private int rollNo;
+	private String collegeName;
+
 	public Student() {
-		System.out.println("Student class default constructor");
-		clas="FY";
-		per=70;
+		super();
 	}
-	public Student(String clas, float per) {
-		this.clas = clas;
-		this.per = per;
+
+	public Student(String name, String aadharNo, String address, long phno, int rollNo, String collegeName) {
+		super(name, aadharNo, address, phno); //accessing parent class constructor
+		this.rollNo = rollNo;
+		this.collegeName = collegeName;
 	}
-	
-	public String getClas() {
-		return clas;
+
+	public int getRollNo() {
+		return rollNo;
 	}
-	public void setClas(String clas) {
-		this.clas = clas;
+
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
 	}
-	public float getPer() {
-		return per;
+
+	public String getCollegeName() {
+		return collegeName;
 	}
-	public void setPer(float per) {
-		this.per = per;
+
+	public void setCollegeName(String collegeName) {
+		this.collegeName = collegeName;
 	}
-	public Student(String name, String city,String clas, float per )
-	{
-		//private members can't inherited into child class
-		/*
-		 * super.name=name; super.city=city;
-		 */
-		super(name,city);
-		this.clas = clas;
-		this.per = per;
-	}
+
 	@Override
 	public String toString() {
-		return "Student [clas=" + clas + ", per=" + per + ", getName()=" + getName() + ", getCity()=" + getCity() + "]";
+		return "Student [rollNo=" + rollNo + ", collegeName=" + collegeName + ", Name=" + getName()
+				+ ", AadharNo=" + getAadharNo() + ", Address=" + getAddress() + ", Phno=" + getPhno()
+				
+				+ "]";
 	}
+
 	
+
 	
 }
