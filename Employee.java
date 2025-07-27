@@ -1,56 +1,70 @@
-package association;
+package hierarchicalinheritance;
 
 
-
-	// Superclass
-	public class Employee {
-		private String name;
-		private int employeeId;
-		private String department;
-
-		// constructors
+	
+	public class Employee extends Person{
+		private int empId;
+		private float salary;
+		private String dept;
+		
+		
 		public Employee() {
-			super();
+			System.out.println("Employee Class Default Constructor");
 		}
 
-		public Employee(String name, int employeeId, String department) {
-			super();
-			this.name = name;
-			this.employeeId = employeeId;
-			this.department = department;
 
+		public Employee(int empId, float salary, String dept) {
+			this.empId = empId;
+			this.salary = salary;
+			this.dept = dept;
+		}
+		
+		
+		public Employee(String name, String city,int empId, float salary, String dept) {
+			super(name,city);
+			this.empId = empId;
+			this.salary = salary;
+			this.dept = dept;
 		}
 
-		// getter/setter methods
-		public String getName() {
-			return name;
+
+		public int getEmpId() {
+			return empId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+
+		public void setEmpId(int empId) {
+			this.empId = empId;
 		}
 
-		public int getEmployeeId() {
-			return employeeId;
+
+		public float getSalary() {
+			return salary;
 		}
 
-		public void setEmployeeId(int employeeId) {
-			this.employeeId = employeeId;
+
+		public void setSalary(float salary) {
+			this.salary = salary;
 		}
 
-		public String getDepartment() {
-			return department;
+
+		public String getDept() {
+			return dept;
 		}
 
-		public void setDepartment(String department) {
-			this.department = department;
+
+		public void setDept(String dept) {
+			this.dept = dept;
 		}
+
 
 		@Override
 		public String toString() {
-			return "Employee [Name=" + name + ", EmployeeId=" + employeeId + ", Department=" + department + "]";
+			return "Employee [empId=" + empId + ", salary=" + salary + ", dept=" + dept + ", getName()=" + getName()
+					+ ", getCity()=" + getCity() + "]";
 		}
-
+		
+		
 	}
 
 

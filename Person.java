@@ -1,40 +1,43 @@
-package association;
+package hierarchicalinheritance;
 
+public class Person {
+	private String name;
+	private String city;
 
-	//Container class
-	public class Person {
-
-		private String name;
-		private Address address;
-
-		public Person(String name, Address address) {
-			this.name = name;
-			this.address = address;
-		}
-
-		// Getter and setter methods
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Address getAddress() {
-			return address;
-		}
-
-		public void setAddress(Address address) {
-			this.address = address;
-		}
-
-		public void displayInfo() {
-			System.out.println("Name: " + name);
-			System.out.println("Address: " + address.getStreet() + ", " + address.getCity() + ", " + address.getState()
-					+ " " + address.getPostalCode());
-		}
+	public Person() {
+		System.out.println("Person class default constructor");
+		name="Amit";
+		city="Pune";
 	}
 
+	public Person(String name, String city) {
+		this.name = name;
+		this.city = city;
+	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", city=" + city + "]";
+	}
+
+	
+
+
+
+}
