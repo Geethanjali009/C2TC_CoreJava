@@ -1,18 +1,17 @@
-package hierarchicalinheritance;
+package multilevelinheritance;
+
+import java.util.Date;
 
 public class Person {
 	private String name;
-	private String city;
+	private long conatctNo;
+	private Date dateOfBirth;
 
-	public Person() {
-		System.out.println("Person class default constructor");
-		name="Amit";
-		city="Pune";
-	}
-
-	public Person(String name, String city) {
+	public Person(String name, long conatctNo, Date dateOfBirth) {
+		super();
 		this.name = name;
-		this.city = city;
+		this.conatctNo = conatctNo;
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public String getName() {
@@ -23,21 +22,28 @@ public class Person {
 		this.name = name;
 	}
 
-	public String getCity() {
-		return city;
+	public long getConatctNo() {
+		return conatctNo;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setConatctNo(long conatctNo) {
+		this.conatctNo = conatctNo;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public Person() {
 	}
 
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", city=" + city + "]";
+		return "Person [name=" + name + ", conatctNo=" + conatctNo + ", dateOfBirth=" + dateOfBirth + "]";
 	}
-
-	
-
-
 
 }
