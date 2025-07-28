@@ -1,70 +1,25 @@
-package hierarchicalinheritance;
+package day6;
 
-
+public class Employee {
+	// Declare instance variables.
+	private String name;
+	private int id;
 	
-	public class Employee extends Person{
-		private int empId;
-		private float salary;
-		private String dept;
-		
-		
-		public Employee() {
-			System.out.println("Employee Class Default Constructor");
-		}
+	// Declare a static variable companyName with data type String and assign value
+	// TNS which is common for all the objects.
+	static String companyName = "TNS";
 
-
-		public Employee(int empId, float salary, String dept) {
-			this.empId = empId;
-			this.salary = salary;
-			this.dept = dept;
-		}
-		
-		
-		public Employee(String name, String city,int empId, float salary, String dept) {
-			super(name,city);
-			this.empId = empId;
-			this.salary = salary;
-			this.dept = dept;
-		}
-
-
-		public int getEmpId() {
-			return empId;
-		}
-
-
-		public void setEmpId(int empId) {
-			this.empId = empId;
-		}
-
-
-		public float getSalary() {
-			return salary;
-		}
-
-
-		public void setSalary(float salary) {
-			this.salary = salary;
-		}
-
-
-		public String getDept() {
-			return dept;
-		}
-
-
-		public void setDept(String dept) {
-			this.dept = dept;
-		}
-
-
-		@Override
-		public String toString() {
-			return "Employee [empId=" + empId + ", salary=" + salary + ", dept=" + dept + ", getName()=" + getName()
-					+ ", getCity()=" + getCity() + "]";
-		}
-		
-		
+	// Declare a two-parameter constructor with parameters named n and i.
+	Employee(String name, int id) {
+		this.name = name;
+		this.id = id;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", id=" + id + ", Company= "+companyName+"]";
+	}
 
+	
+
+}
