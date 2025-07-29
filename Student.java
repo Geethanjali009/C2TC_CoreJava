@@ -1,19 +1,11 @@
-package SingleInheritance;
+package day7;
 
-public class Student extends Citizen {
-	private int rollNo;
-	private String collegeName;
+class Student implements Cloneable {
+	int rollNo;
+	String className;
+	String name;
 
-	public Student() {
-		super();
-	}
-
-	public Student(String name, String aadharNo, String address, long phno, int rollNo, String collegeName) {
-		super(name, aadharNo, address, phno); //accessing parent class constructor
-		this.rollNo = rollNo;
-		this.collegeName = collegeName;
-	}
-
+	// Getters and setters
 	public int getRollNo() {
 		return rollNo;
 	}
@@ -22,23 +14,46 @@ public class Student extends Citizen {
 		this.rollNo = rollNo;
 	}
 
-	public String getCollegeName() {
-		return collegeName;
+	public String getClassName() {
+		return className;
 	}
 
-	public void setCollegeName(String collegeName) {
-		this.collegeName = collegeName;
+	public void setClassName(String className) {
+		this.className = className;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	// Class constructor
+	public Student(int rollNo, String className, String name) {
+		this.rollNo = rollNo;
+		this.className = className;
+		this.name = name;
+	}
+
+	// Print method
+	public void printData() {
+		System.out.println("Name : " + name + ", RollNo: " + rollNo + ", Class Name : " + className);
+	}
+
+	// Override the clone method
 
 	@Override
-	public String toString() {
-		return "Student [rollNo=" + rollNo + ", collegeName=" + collegeName + ", Name=" + getName()
-				+ ", AadharNo=" + getAadharNo() + ", Address=" + getAddress() + ", Phno=" + getPhno()
-				
-				+ "]";
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
 	}
 
-	
+	// Override the clone method - Covariant overriding
 
-	
+	/*
+	 * @Override public Student clone() throws CloneNotSupportedException { return
+	 * (Student) super.clone(); }
+	 */
+
 }
