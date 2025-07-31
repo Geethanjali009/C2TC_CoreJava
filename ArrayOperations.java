@@ -1,36 +1,29 @@
-package day10;
+package day11;
 
-public class ArrayOperations
-{
-	//print int array
-	static void printArray(int[] arr) {
-		for (int i = 0; i < arr.length; i++)
-			System.out.print(arr[i] + "\t");
-		System.out.println();
+public class ArrayOperations {
+
+	int intArray[] ;
+	
+	public ArrayOperations() {
+		super();
+		
+	}
+
+	public ArrayOperations(int[] intArray) {
+		super();
+		this.intArray = intArray;
+		
 	}
 	
-	// variable argument function
-	public static int getSum(int... n) {
-		int sum = 0;
-		for (int no : n)
-			sum += no;
-		return sum;
-	}
-	
-	//count no. of odd elements
-	public static int getOddCount(int b[])
-	{
-		int count=0;
-		for (int i = 0; i < b.length; i++) {
-			if (b[i] % 2 != 0)
-				count++;		
+	public void displayArray() {
+		for(int no:intArray) {
+			System.out.println("The array elements are: "+no);
 		}
-		return count;
 	}
 	
-	//count no. of even elements
-	public static int getEvenCount(int b[])
-	{
-		return b.length-getOddCount(b);
+	public int getElement(int position) {
+		return intArray[position];
 	}
+	
+	
 }
