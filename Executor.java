@@ -1,25 +1,54 @@
-package SecondPackage;
+package day12;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
-import FirstPackage.Base;
 public class Executor {
+
 	public static void main(String[] args) {
-		// accessing different package class
-		Base b1 = new Base();
+		try {
+			@SuppressWarnings("resource")
+			Scanner sc = new Scanner(System.in);
+			//Accept student details
+			Student sOne = new Student();
+			System.out.println();
+			System.out.println("Enter the roll no: ");
+			int rollNo = sc.nextInt();
+			sOne.setRollNo(rollNo);
+			System.out.println("Enter your name: ");
+			String name = sc.nextLine();
+			sc.nextLine();
+			sOne.setName(name);
+			System.out.println("Enter the no.of subjects ");
+			int sub = sc.nextInt();
+			sOne.setNoOfSubjects(sub);
+			System.out.println("enter the marks for " + sub);
+			int[] intArr = new int[sub];
+			for (int i = 0; i < sub; i++) {
 
-		// private, default and protected members can't access
+				intArr[i] = sc.nextInt();
+			}
+			//validate marks
+			if (Service.validateMarks(intArr)) {
 
-		/*
-		 * b1.varPrivate=21; b1.methodPrivate(); b1.varDefault=11; b1.methodDefault();
-		 * b1.varProtected=31; b1.methodProtected();
-		 */
+				sOne.setMarks(intArr);
+				sOne.setPer(Service.calculatePercentage(intArr));
 
-		b1.methodPublic();
-		b1.varPublic = 41;
-		b1.methodPublic();
+			}
+			//display student details
+			System.out.println("Student details: " + sOne);
+
+		} catch (InvalidMarksException e) {
+			// e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+
+		catch (NullPointerException | ArithmeticException |InputMismatchException e) {
+
+			// e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+
 	}
+
 }
-	
-	
-
-
