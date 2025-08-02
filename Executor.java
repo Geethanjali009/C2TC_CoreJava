@@ -1,54 +1,24 @@
-package day12;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
+package day22;
 
 public class Executor {
 
 	public static void main(String[] args) {
-		try {
-			@SuppressWarnings("resource")
-			Scanner sc = new Scanner(System.in);
-			//Accept student details
-			Student sOne = new Student();
-			System.out.println();
-			System.out.println("Enter the roll no: ");
-			int rollNo = sc.nextInt();
-			sOne.setRollNo(rollNo);
-			System.out.println("Enter your name: ");
-			String name = sc.nextLine();
-			sc.nextLine();
-			sOne.setName(name);
-			System.out.println("Enter the no.of subjects ");
-			int sub = sc.nextInt();
-			sOne.setNoOfSubjects(sub);
-			System.out.println("enter the marks for " + sub);
-			int[] intArr = new int[sub];
-			for (int i = 0; i < sub; i++) {
+		int res = 0;
 
-				intArr[i] = sc.nextInt();
-			}
-			//validate marks
-			if (Service.validateMarks(intArr)) {
+		/*
+		 * res = UsingCallableStmt.createProcedure1(); if (res == 1)
+		 * System.out.println("Procedure Created.....");
+		 */
 
-				sOne.setMarks(intArr);
-				sOne.setPer(Service.calculatePercentage(intArr));
-
-			}
-			//display student details
-			System.out.println("Student details: " + sOne);
-
-		} catch (InvalidMarksException e) {
-			// e.printStackTrace();
-			System.err.println(e.getMessage());
-		}
-
-		catch (NullPointerException | ArithmeticException |InputMismatchException e) {
-
-			// e.printStackTrace();
-			System.err.println(e.getMessage());
-		}
-
+		res = UsingCallableStmt.callProcedure1(1, "Amit", 60000);
+		if (res != 0)
+			System.out.println("Procedure Executed.....");
+		res = UsingCallableStmt.callProcedure1(2, "Pooja", 78000);
+		if (res != 0)
+			System.out.println("Procedure Executed.....");
+		res = UsingCallableStmt.callProcedure1(3, "Nidhi", 71000);
+		if (res != 0)
+			System.out.println("Procedure Executed.....");
 	}
 
 }
