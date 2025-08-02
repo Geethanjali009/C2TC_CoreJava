@@ -1,16 +1,27 @@
-package day19;
+package day21;
 
 public class Student {
-	private int rollNo;
-	private String name;
-	private float per;
+	int id;
+	String name;
+	String branch;
 
-	public int getRollNo() {
-		return rollNo;
+	public Student(int id, String name, String branch) {
+		this.id = id;
+		this.name = name;
+		this.branch = branch;
 	}
 
-	public void setRollNo(int rollNo) {
-		this.rollNo = rollNo;
+//	@Override
+	public String toString() {
+		return "Student information [id=" + id + ", name=" + name + ", branch=" + branch + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -21,29 +32,11 @@ public class Student {
 		this.name = name;
 	}
 
-	public float getPer() {
-		return per;
+	public String getBranch() {
+		return branch;
 	}
 
-	public void setPer(float per) {
-		this.per = per;
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
-
-	public Student(int rollNo, String name, float per) {
-		super();
-		this.rollNo = rollNo;
-		this.name = name;
-		this.per = per;
-	}
-
-	public Student() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "Student [rollNo=" + rollNo + ", name=" + name + ", per=" + per + "]";
-	}
-
 }
